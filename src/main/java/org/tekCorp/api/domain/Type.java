@@ -1,6 +1,8 @@
 package org.tekCorp.api.domain;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.CompoundIndex;
+import org.springframework.data.mongodb.core.index.CompoundIndexes;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -10,6 +12,9 @@ import java.util.List;
  * Created by FRERES Thierry on 05/02/2016.
  */
 @Document
+@CompoundIndexes({
+        @CompoundIndex(name = "type_idx", def = "{'typeName' : 1, 'etatList.etatPersName' : 1}", unique = true)
+})
 public class Type {
 
     @Id
