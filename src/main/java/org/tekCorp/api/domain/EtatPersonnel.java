@@ -12,7 +12,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class EtatPersonnel {
     @Id
     private String id;
-    @Indexed(unique = true, sparse = true)
+    @Indexed(unique = true)
     private String etatPersName;
 
     public String getId() {
