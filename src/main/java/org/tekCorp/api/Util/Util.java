@@ -18,7 +18,9 @@ public class Util {
                 if (!mapElement.containsKey(type.getId())) {
                     mapElement.put(type, new ArrayList<Element>());
                 }
-                mapElement.get(type).add(element);
+                if (element.getType().getId().equals(type.getId())){
+                    mapElement.get(type).add(element);
+                }
             }
         }
 
