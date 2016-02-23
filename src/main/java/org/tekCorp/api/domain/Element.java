@@ -28,19 +28,15 @@ public class Element {
     public String getImage() {
         return image;
     }
-
     public void setImage(String image) {
         this.image = image;
     }
-
     public String getId() {
         return id;
     }
-
     public void setId(String Id) {
         this.id = Id;
     }
-
     public String getTitle() {
         return title;
     }

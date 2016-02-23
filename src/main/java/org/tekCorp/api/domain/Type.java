@@ -13,33 +13,29 @@ import java.util.List;
  */
 @Document
 @CompoundIndexes({
-        @CompoundIndex(name = "type_idx", def = "{'typeName' : 1, 'etatList.etatPersName' : 1}", sparse = true)
+        @CompoundIndex(name = "type_idx", def = "{'typeName' : 1, 'etatList.etatPersName' : 1}", unique = true)
 })
 public class Type {
 
     @Id
     private String id;
     private List<EtatPersonnel> etatList;
-    @Indexed(unique = true)
+    @Indexed
     private String typeName;
 
 
     public void setId(String id) {
         this.id = id;
     }
-
     public String getTypeName() {
         return typeName;
     }
-
     public void setTypeName(String typeName) {
         this.typeName = typeName;
     }
-
     public List<EtatPersonnel> getEtatList() {
         return etatList;
     }
-
     public void setEtatList(List<EtatPersonnel> etatList) {
         this.etatList = etatList;
     }

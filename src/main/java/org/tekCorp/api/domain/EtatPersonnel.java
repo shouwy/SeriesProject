@@ -12,21 +12,18 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class EtatPersonnel {
     @Id
     private String id;
-    @Indexed(unique = true)
+    @Indexed
     private String etatPersName;
 
     public String getId() {
         return id;
     }
-
     public void setId(String id) {
         this.id = id;
     }
-
     public String getEtatPersName() {
         return etatPersName;
     }
-
     public void setEtatPersName(String etatPersName) {
         this.etatPersName = etatPersName;
     }
