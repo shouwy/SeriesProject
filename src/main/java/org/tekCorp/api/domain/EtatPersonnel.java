@@ -9,11 +9,10 @@ import org.springframework.data.mongodb.core.mapping.Document;
  * Created by FRERES Thierry on 05/02/2016.
  */
 @Document
-
 public class EtatPersonnel {
     @Id
     private String id;
-    @Indexed(unique = true)
+    @Indexed(unique = true, sparse = true)
     private String etatPersName;
 
     public String getId() {
