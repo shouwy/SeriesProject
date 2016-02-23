@@ -15,7 +15,7 @@ public class Util {
         HashMap<Type, List<Element>> mapElement = new HashMap<Type, List<Element>>();
         for (Type type : typeList){
             for (Element element : listSeries) {
-                if (!mapElement.containsKey(type.getId())) {
+                if (!mapElement.containsKey(type)) {
                     mapElement.put(type, new ArrayList<Element>());
                 }
                 if (element.getType().getId().equals(type.getId())){
