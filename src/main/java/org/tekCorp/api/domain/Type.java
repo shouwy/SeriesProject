@@ -13,7 +13,7 @@ import java.util.List;
  */
 @Document
 @CompoundIndexes({
-        @CompoundIndex(name = "type_idx", def = "{'typeName' : 1, 'etatList.etatPersName' : 1}", unique = true)
+        @CompoundIndex(name = "type_idx", def = "{'typeName' : 1, 'etatList.etatPersName' : 1}")
 })
 public class Type {
 
