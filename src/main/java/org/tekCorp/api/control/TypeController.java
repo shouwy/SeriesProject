@@ -31,12 +31,7 @@ public class TypeController {
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     public @ResponseBody Type add(@RequestBody Type type){
-        Type oriType = typeRepository.findByTypeName(type.getTypeName());
-        if (oriType != null) {
-            return oriType;
-        }
         type = typeRepository.save(type);
-
         return type;
     }
 }

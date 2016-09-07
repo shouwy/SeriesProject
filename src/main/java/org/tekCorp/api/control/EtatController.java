@@ -30,12 +30,7 @@ public class EtatController {
 
         @RequestMapping(value = "/add", method = RequestMethod.POST)
         public @ResponseBody Etat add(@RequestBody Etat etat){
-            Etat orietat = etatRepository.findByEtatName(etat.getEtatName());
-            if (orietat != null) {
-                return orietat;
-            }
             etat = etatRepository.save(etat);
-
             return etat;
         }
 }

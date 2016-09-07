@@ -37,13 +37,7 @@ public class EtatPersonnalController {
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     public @ResponseBody EtatPersonnel add(@RequestBody EtatPersonnel etatPersonnel){
-        EtatPersonnel oriEtatPersonnal = etatPersonnelRepository.findByEtatPersName(etatPersonnel.getEtatPersName());
-        if (oriEtatPersonnal != null) {
-            return oriEtatPersonnal;
-        }
-
         etatPersonnel = etatPersonnelRepository.save(etatPersonnel);
-
         return etatPersonnel;
     }
 }

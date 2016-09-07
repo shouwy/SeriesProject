@@ -27,12 +27,6 @@ public class ElementsController {
 
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     public @ResponseBody Element add(@RequestBody Element element){
-        Element oriElement = elementRepository.findByTitleAndYear(element.getTitle(), element.getYear());
-
-        if (oriElement != null){
-            return oriElement;
-        }
-
         element = elementRepository.save(element);
         return element;
     }
